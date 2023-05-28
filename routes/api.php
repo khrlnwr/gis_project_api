@@ -33,6 +33,7 @@ Route::get('event_type/{id}', [EventTypeController::class, 'show']);
 
 Route::get('provinces', [ProvincesAreaController::class, 'index']);
 Route::post('provinces', [ProvincesAreaController::class, 'insert']);
+Route::post('provinces/import_csv', [ProvincesAreaController::class, 'importCSV']);
 
 Route::get('cities', [CitiesAreaController::class, 'index']);
 Route::post('create_city', [CitiesAreaController::class, 'insert']);

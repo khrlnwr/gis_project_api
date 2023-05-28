@@ -61,4 +61,31 @@ class ProvincesAreaController extends Controller
         }
 
     }
+
+    public function importCSV(Request $request) {
+
+        // return response()->json(["HERE IMPORT CSV"], 200);
+
+        if ($request->hasFile('csv_file')) {
+            $file = $request->file('csv_file');
+            $csvData = file_get_contents($file);
+            $rows = array_map('str_getcsv', explode("\n", $csvData));
+            
+            foreach ($rows as $row) {
+
+                $province = new ProvinceArea();
+                $province->id = $row[0];
+                $province->name = $row[2];
+                $province->notes = $row[2];
+                $province->lat = $row[5];
+                $province->long = $row[6];
+
+                $province->save();
+            }
+
+            return response()->json(['message' => 'CSV imported successfully.']);
+        }
+
+        return response()->json(['message' => 'No CSV file found.']);
+    }
 }

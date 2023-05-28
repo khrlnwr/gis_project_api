@@ -10,6 +10,7 @@ class ProvinceArea extends Model
     use HasFactory;
     protected $table = 'provinces_area';
     protected $fillable = [
+        'id',
         'name',
         'notes',
         'lat',

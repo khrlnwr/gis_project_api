@@ -1,14 +1,5 @@
 GET http://localhost:8000/api/event_type
 
-###
-# POST http://localhost:8000/api/event_type
-# Content-Type: application/json
-
-# {
-#     "name": "John Doe",
-#     "notes": "john@gmail.com"
-# }
-
 
 # Endpoint for Provinces
 GET http://localhost:8000/api/provinces 
@@ -18,8 +9,8 @@ GET http://localhost:8000/api/provinces
 # Content-Type: application/json
 
 # {
-#     "name": "Jawa Barat",
-#     "notes": "Provinsi Jawa Barat",
+#     "name": "Palembang",
+#     "notes": "Provinsi Sumatra Selatan",
 #     "lat": -6.914744,
 #     "long": 107.609810
 # }
@@ -67,3 +58,13 @@ Content-Type: application/json
 #     "lat": -7.881780,
 #     "long": 112.019409
 # }
+
+
+###
+POST http://localhost:8000/api/event_type
+Content-Type: application/json
+
+{
+    "name": "Pos Perbatasan",
+    "notes": "Pos area perbatasan"
+}
