@@ -1,0 +1,42 @@
+### Get semua kota
+GET http://localhost:8000/api/cities
+
+### Get kota by nama kota
+GET http://localhost:8000/api/city/get_city_by_name/Nunukan
+
+### Get semua provinsi
+GET http://localhost:8000/api/provinces 
+
+### Get provinsi by id_provinsi
+GET http://localhost:8000/api/select_cities_by_province/2
+
+### Get semua area koordinat 
+GET http://localhost:8000/api/prones_area
+
+### Get semua area koordinat berdasarkan id provinsi, id kota dan daftar id tipe (layer)
+POST http://localhost:8000/api/prones_area/filter
+Content-Type: application/json
+
+{
+    "id_province": 23,
+    "id_city": 1630,
+    "id_type": [10, 6]
+}
+
+### Get semua tipe event (layer)
+GET http://localhost:8000/api/event_type
+
+
+# ================== ENDPOINT UNTUK CREATE DATA ====================
+### Create data baru prones area di layer tertentu
+POST http://localhost:8000/api/prones_area
+Content-Type: application/json
+
+{
+    "id_type": 6,
+    "id_province": 23,
+    "id_city": 1630,
+    "name": "Polres Nunukan",
+    "lat": -4.084167,
+    "long": 117.700278
+}

@@ -62,6 +62,24 @@ class CitiesAreaController extends Controller
         }
     }
 
+    public function showCitiesByName($name) {
+        $search_term = '%'.$name.'%';
+        $cities = DB::table('cities_area')->where('name', 'like', $search_term)->get();
+
+        if ($cities->count() > 0) {
+            return response()->json([
+                'status' => 200,
+                'result' => $cities,
+            ], 200);
+        } else {
+            return response()->json([
+                'status' => 404,
+                'result' => 'no city record found'
+            ], 404);            
+        }
+
+    }
+
     public function showCitiesByProvinceId($idProvince) {
         $cities = DB::table('cities_area')->where('id_province', $idProvince)->get();
         if ($cities->count() > 0) {

@@ -1,70 +1,70 @@
-GET http://localhost:8000/api/event_type
+# GET http://localhost:8000/api/event_type
 
 
-# Endpoint for Provinces
-GET http://localhost:8000/api/provinces 
+# # Endpoint for Provinces
+# GET http://localhost:8000/api/provinces 
 
-### 
-POST http://localhost:8000/api/provinces
-Content-Type: application/json
+# ### 
+# # POST http://localhost:8000/api/provinces
+# # Content-Type: application/json
 
-{
-    "name": "Palembang",
-    "notes": "Provinsi Sumatra Selatan",
-    "lat": -6.914744,
-    "long": 107.609810
-}
+# # {
+# #     "name": "Palembang",
+# #     "notes": "Provinsi Sumatra Selatan",
+# #     "lat": -6.914744,
+# #     "long": 107.609810
+# # }
 
-###
-# Endpoint for cities
-GET http://localhost:8000/api/cities
+# ###
+# # Endpoint for cities
+# GET http://localhost:8000/api/cities
 
-###
-# POST http://localhost:8000/api/cities
+# ###
+# # POST http://localhost:8000/api/cities
+# # Content-Type: application/json
+
+# # {
+# #     "id_province": 2,
+# #     "name": "Surabaya",
+# #     "notes": "Ibu Kota Jawa Timur",
+# #     "lat": -7.250445,
+# #     "long": 112.768845
+# # }
+
+# GET http://localhost:8000/api/select_cities_by_province/2
+
+# ###
+# GET http://localhost:8000/api/prones_area
+
+# ###
+# POST http://localhost:8000/api/prones_area/filter
 # Content-Type: application/json
 
 # {
 #     "id_province": 2,
-#     "name": "Surabaya",
-#     "notes": "Ibu Kota Jawa Timur",
-#     "lat": -7.250445,
-#     "long": 112.768845
+#     "id_city": 5,
+#     "id_type": 1
 # }
 
-GET http://localhost:8000/api/select_cities_by_province/2
+# ###
+# # POST http://localhost:8000/api/prones_area
+# # Content-Type: application/json
 
-###
-GET http://localhost:8000/api/prones_area
+# # {
+# #     "id_type": 1,
+# #     "id_province": 2,
+# #     "id_city": 6,
+# #     "name": "Sambirobyong, Blabak, Kandat, Kediri Regency, East Java",
+# #     "lat": -7.881780,
+# #     "long": 112.019409
+# # }
 
-###
-POST http://localhost:8000/api/prones_area/filter
-Content-Type: application/json
 
-{
-    "id_province": 2,
-    "id_city": 5,
-    "id_type": 1
-}
-
-###
-# POST http://localhost:8000/api/prones_area
+# ###
+# POST http://localhost:8000/api/event_type
 # Content-Type: application/json
 
 # {
-#     "id_type": 1,
-#     "id_province": 2,
-#     "id_city": 6,
-#     "name": "Sambirobyong, Blabak, Kandat, Kediri Regency, East Java",
-#     "lat": -7.881780,
-#     "long": 112.019409
+#     "name": "Pos Perbatasan",
+#     "notes": "Pos area perbatasan"
 # }
-
-
-###
-POST http://localhost:8000/api/event_type
-Content-Type: application/json
-
-{
-    "name": "Pos Perbatasan",
-    "notes": "Pos area perbatasan"
-}

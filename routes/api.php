@@ -23,9 +23,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::post('prones_area/filter', [PronesAreaController::class, 'filterPronesArea']);
 Route::get('prones_area', [PronesAreaController::class, 'index']);
 Route::post('prones_area', [PronesAreaController::class, 'insert']);
-Route::post('prones_area/filter', [PronesAreaController::class, 'filterPronesArea']);
+// Route::post('prones_area/filter', [PronesAreaController::class, 'filterPronesArea']);
 
 Route::get('event_type', [EventTypeController::class, 'index']);
 Route::post('event_type', [EventTypeController::class, 'insert']);
@@ -38,4 +39,5 @@ Route::post('provinces/import_csv', [ProvincesAreaController::class, 'importCSV'
 Route::get('cities', [CitiesAreaController::class, 'index']);
 Route::post('create_city', [CitiesAreaController::class, 'insert']);
 Route::get('select_cities_by_province/{id}', [CitiesAreaController::class, 'showCitiesByProvinceId']);
+Route::get('city/get_city_by_name/{name}', [CitiesAreaController::class, 'showCitiesByName']);
 
